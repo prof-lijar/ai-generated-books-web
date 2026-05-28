@@ -1,56 +1,3 @@
-<<<<<<< HEAD
-import { describe, it, expect, vi } from 'vitest';
-import { fetchBooks } from '../github';
-
-// Mock the global fetch API
-global.fetch = vi.fn();
-
-describe('fetchBooks', () => {
-  it('should correctly parse subdirectory contents and build PDF URLs', async () => {
-    const mockGitHubContent = [
-      {
-        type: 'dir',
-        path: 'book1',
-        name: 'book1',
-      },
-      {
-        type: 'file',
-        path: 'book1/test.pdf',
-        name: 'test.pdf',
-        download_url: 'https://github.com/download/test.pdf',
-        size: 1234,
-      },
-    ];
-
-    const mockDirContent = [
-      {
-        type: 'file',
-        path: 'book1/test.pdf',
-        name: 'test.pdf',
-        download_url: 'https://github.com/download/test.pdf',
-        size: 1234,
-      },
-    ];
-
-    // First call to fetch root contents, second call to fetch directory contents
-    (global.fetch as any).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockGitHubContent,
-    });
-    (global.fetch as any).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockDirContent,
-    });
-
-    const books = await fetchBooks();
-    
-    expect(books).toHaveLength(1);
-    expect(books[0]).toEqual({
-      title: 'test',
-      filename: 'test.pdf',
-      url: 'https://github.com/download/test.pdf',
-      size: 1234,
-=======
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { fetchBooks } from '../github';
 
@@ -113,38 +60,33 @@ describe('fetchBooks', () => {
       filename: '1984_novel.pdf',
       url: 'https://github.com/download/1984.pdf',
       size: 2000,
->>>>>>> qa/replace-playwright-with-vitest
       updatedAt: '',
     });
   });
 
-<<<<<<< HEAD
   it('should handle missing download_url by using raw content URL', async () => {
-    const mockGitHubContent = [
-      {
-        type: 'dir',
-        path: 'book1',
-        name: 'book1',
-      },
+    const mockRootContents = [
+      { name: 'book1', path: 'book1', type: 'dir' },
     ];
 
-    const mockDirContent = [
-      {
-        type: 'file',
-        path: 'book1/test.pdf',
-        name: 'test.pdf',
-        download_url: '',
-        size: 1234,
-      },
+    const mockBook1Contents = [
+      { name: 'test.pdf', path: 'book1/test.pdf', type: 'file', size: 1234, download_url: '' },
     ];
 
-    (global.fetch as any).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockGitHubContent,
-    });
-    (global.fetch as any).mockResolvedValueOnce({
-      ok: true,
-      json: async () => mockDirContent,
+    vi.mocked(fetch).mockImplementation((url: string) => {
+      if (url.endsWith('/contents')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockRootContents),
+        } as Response);
+      }
+      if (url.endsWith('/contents/book1')) {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockBook1Contents),
+        } as Response);
+      }
+      return Promise.resolve({ ok: false, status: 404 } as Response);
     });
 
     const books = await fetchBooks();
@@ -152,15 +94,6 @@ describe('fetchBooks', () => {
     expect(books[0].url).toBe('https://raw.githubusercontent.com/prof-lijar/ai-generated-books/main/book1/test.pdf');
   });
 
-  it('should throw an error if the root fetch fails', async () => {
-    (global.fetch as any).mockResolvedValueOnce({
-      ok: false,
-      status: 404,
-      statusText: 'Not Found',
-    });
-
-    await expect(fetchBooks()).rejects.toThrow('GitHub API error: 404 Not Found');
-=======
   it('should throw an error when root fetch fails', async () => {
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: false,
@@ -206,6 +139,5 @@ describe('fetchBooks', () => {
     const books = await fetchBooks();
     expect(books).toHaveLength(1);
     expect(books[0].filename).toBe('book1.pdf');
->>>>>>> qa/replace-playwright-with-vitest
   });
 });
