@@ -1,29 +1,31 @@
 # Project Progress
 
 ## Current Phase
-quality — Reviewing and finalizing the PDF Reader implementation.
+deployment — Final testing and production deployment.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel.
 
 ## What Was Completed This Cycle
-- Created QA review issue #11 for PR #10.
+- Merged PR #10: PDF Reader Page with Viewer Controls.
+- All core feature development (Library and Reader) is complete.
 
 ## What Is In Progress
-- PR #10: [Frontend] Build PDF Reader Page with Viewer Controls (Awaiting QA review)
+- Issue #12: [QA] Final E2E Testing and Responsiveness Audit
+- Issue #13: [DevOps] Deployment and CI/CD Setup
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- QA to review PR #10.
-- Architect to merge PR #10 upon approval.
-- Once merged, move to Deployment phase.
+- Complete E2E testing to ensure no regressions.
+- Deploy the site to Vercel and configure GitHub Actions.
+- Final sign-off and project completion.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
 - [x] Search/Filter functional — done
-- [ ] PDF Reader Page (embedded viewer) — in progress (PR #10)
-- [ ] PDF Controls (zoom, navigation) — in progress (PR #10)
-- [ ] Responsive UI — in progress
-- [ ] CI/CD Pipeline — not started
+- [x] PDF Reader Page (embedded viewer) — done
+- [x] PDF Controls (zoom, navigation) — done
+- [ ] Responsive UI Audit — in progress (Issue #12)
+- [ ] CI/CD Pipeline & Deployment — in progress (Issue #13)
