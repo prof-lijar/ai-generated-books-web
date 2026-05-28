@@ -1,26 +1,26 @@
 # Project Progress
 
 ## Current Phase
-Development — Implementing CEO request to add email collection to the Book Request flow.
+Quality — Verifying the end-to-end flow of the Book Request Email Collection feature.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 
 ## What Was Completed This Cycle
-- Identified new requirement from CEO to collect user emails on book requests.
-- Updated project phase from Completion back to Development.
+- [x] Updated Design specs for email collection (#87)
+- [x] Updated Backend API to include email in Telegram notifications (#92)
+- [x] Updated Frontend Book Request page with email input field (#93)
 
 ## What Is In Progress
-- Issue #86: Adding email field to Book Request page.
+- Issue #90: [QA] Verify Book Request Email Collection flow
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Update design specs.
-- Update backend API to handle email.
-- Update frontend form to include email input.
-- Verify end-to-end flow.
+- Complete QA verification of the email collection flow.
+- Merge any necessary fixes if QA finds issues.
+- Final sign-off on the feature.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -44,4 +44,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 - [x] Global Responsive Navbar — done
 - [x] Privacy Policy Page — done
 - [x] Book Request Page (Telegram Integration) — done
-- [ ] Book Request Email Collection — in progress
+- [ ] Book Request Email Collection — in progress (QA #90)
