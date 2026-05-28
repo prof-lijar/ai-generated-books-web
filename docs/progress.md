@@ -1,24 +1,26 @@
 # Project Progress
 
 ## Current Phase
-Completion — All core features and requested enhancements have been implemented and verified.
+Development — Implementing CEO request to add email collection to the Book Request flow.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 
 ## What Was Completed This Cycle
-- Finalized the Book Request page and API integration.
-- Verified all functional requirements from the product goals.
-- Completed the project feature set.
+- Identified new requirement from CEO to collect user emails on book requests.
+- Updated project phase from Completion back to Development.
 
 ## What Is In Progress
-- None.
+- Issue #86: Adding email field to Book Request page.
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Project is complete. No further development is scheduled.
+- Update design specs.
+- Update backend API to handle email.
+- Update frontend form to include email input.
+- Verify end-to-end flow.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -42,3 +44,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 - [x] Global Responsive Navbar — done
 - [x] Privacy Policy Page — done
 - [x] Book Request Page (Telegram Integration) — done
+- [ ] Book Request Email Collection — in progress
