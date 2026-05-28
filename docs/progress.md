@@ -7,9 +7,7 @@ Iteration — Final UI polish and layout consistency.
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Identified missing Navbar/Footer on the About page (Issue #65).
-- Created actionable Frontend issue #67 to resolve layout inconsistency.
-- Closed issue #65.
+- Assigned Frontend to fix layout consistency on the About page (#67).
 
 ## What Is In Progress
 - [ ] Apply global Navbar and Footer to the About page (#67)
@@ -18,7 +16,7 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - None.
 
 ## Next Cycle Plan
-- Frontend will ensure the About page is wrapped in the global layout to maintain UI consistency.
+- Once #67 is merged, the project should be considered fully complete.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -38,4 +36,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] PDF Viewer UI/UX Polish — done
 - [x] About Page & Footer — done
 - [x] Detailed AI-Writer provenance on About page — done
-- [ ] Layout consistency on About page — in progress (PR #X)
+- [ ] Layout consistency on About page — in progress (#67)

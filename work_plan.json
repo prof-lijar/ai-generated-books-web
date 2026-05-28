@@ -1,7 +1,7 @@
 {
-  "cycle_reasoning": "Fix layout inconsistency on the About page by adding the global Navbar and Footer.",
+  "cycle_reasoning": "Final polish: Ensure the About page is wrapped in the global layout (Navbar/Footer) for UI consistency.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js / TypeScript",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
     {"role": "frontend", "turns": 3, "priority": "P0"}
   ]
