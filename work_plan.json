@@ -1,6 +1,6 @@
 {
-  "cycle_reasoning": "Project is in maintenance mode. No active development required.",
+  "cycle_reasoning": "Project is in maintenance mode. No active development tasks. Performing routine health check.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js / TypeScript / Tailwind",
+  "tech_stack": "Next.js, TypeScript, Tailwind CSS",
   "assignments": []
 }
