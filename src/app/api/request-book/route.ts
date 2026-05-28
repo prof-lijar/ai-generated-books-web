@@ -5,11 +5,18 @@ import { sendTelegramMessage } from '@/lib/telegram';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { title, description } = body;
+    const { title, description, email } = body;
 
     if (!title || typeof title !== 'string' || title.trim() === '') {
       return NextResponse.json(
         { error: 'Title is required and must be a non-empty string' },
+        { status: 400 }
+      );
+    }
+
+    if (!email || typeof email !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json(
+        { error: 'A valid email address is required' },
         { status: 400 }
       );
     }
@@ -25,7 +32,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const message = `📚 *New Book Request!*\n\n*Title:* ${title}\n${
+    const message = `📚 *New Book Request!*\n\n*Title:* ${title}\n*Email:* ${email}\n${
       description ? `*Description:* ${description}` : ''
     }`;
 
