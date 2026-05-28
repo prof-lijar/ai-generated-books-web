@@ -1,25 +1,24 @@
 # Project Progress
 
 ## Current Phase
-quality — Validating the native PDF viewer implementation and cleaning up the PR queue.
+quality — Finalizing tests and clearing the PR queue.
 
 ## Tech Stack
-Next.js (App Router), TypeScript, Tailwind CSS, Playwright.
+Next.js (App Router), TypeScript, Tailwind CSS, Vitest (migrating from Playwright).
 
 ## What Was Completed This Cycle
-- Identified that PR #34 is superseded by PR #36.
-- Identified that E2E tests need updates for the native PDF viewer (PR #37).
+- Confirmed PR #37 and #34 are approved and ready for final processing.
+- Identified the need to migrate from Playwright to Vitest due to environment constraints.
 
 ## What Is In Progress
-- Issue #38: Review PR #37 (E2E tests update)
-- Issue #39: Merge PR #37 and close PR #34
+- Issue #39: Merge PR #37 and close PR #34 (Architect)
+- Issue #40: Remove Playwright and replace with vitest unit tests (QA)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Once PR #37 is merged, perform a final stability pass and verify that the project meets all "Definition of Done" criteria.
-- Finalize the project for hand-off.
+- Once the PR queue is empty and Vitest is configured, perform a final check against the "Definition of Done" and prepare for project completion.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -30,5 +29,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, Playwright.
 - [x] Responsive UI Audit — completed
 - [x] CI/CD Pipeline & Deployment — completed
 - [x] Professional Documentation (README) — done
-- [ ] E2E Test Suite — in progress (PR #37)
-- [ ] Final Stability Pass — pending E2E validation
+- [ ] E2E/Unit Test Suite — in progress (migrating to Vitest)
+- [ ] Final Stability Pass — pending test validation
