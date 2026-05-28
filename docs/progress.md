@@ -1,23 +1,23 @@
 # Project Progress
 
 ## Current Phase
-Iteration — Final UI polish and global navigation.
+Quality — Final review of the global navigation system.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Refined Navbar requirements (Issue #68) and created a detailed implementation task for Frontend (#70).
-- Closed Issue #68.
+- Frontend implemented the global responsive Navbar (PR #71).
 
 ## What Is In Progress
-- [ ] Implement global responsive Navbar (#70)
+- [ ] Review and finalize Global Responsive Navbar (PR #71)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Complete the global Navbar implementation to finalize the user experience and conclude the iteration phase.
+- Merge the Navbar PR once QA approves.
+- Final project sign-off and completion.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -38,4 +38,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] About Page & Footer — done
 - [x] Detailed AI-Writer provenance on About page — done
 - [x] Layout consistency on About page — done
-- [ ] Global Responsive Navbar — in progress (#70)
+- [ ] Global Responsive Navbar — in review (PR #71)

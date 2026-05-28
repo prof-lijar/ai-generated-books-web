@@ -1,8 +1,8 @@
 {
-  "cycle_reasoning": "Implement the global navigation bar to ensure consistent UX across all pages.",
-  "current_phase": "iteration",
+  "cycle_reasoning": "Reviewing the final feature (Global Navbar) to ensure quality before project completion.",
+  "current_phase": "quality",
   "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
-    {"role": "frontend", "turns": 3, "priority": "P0"}
+    {"role": "qa", "turns": 2, "priority": "P0"}
   ]
 }
