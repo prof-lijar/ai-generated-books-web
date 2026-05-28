@@ -1,7 +1,7 @@
 # Project Progress
 
 ## Current Phase
-Completed — The project has met all functional requirements and definition of done.
+Iteration — Final polish pass on the PDF viewer UI/UX.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
@@ -12,13 +12,15 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - Final polish and branding pass completed.
 
 ## What Is In Progress
-- None.
+- [Frontend] Improve PDF viewer UI/UX and responsive design (Issue #56).
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- No further work planned. The project is now in maintenance mode.
+- Review the PDF viewer improvements.
+- Perform a final QA pass.
+- Mark project as fully completed.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -35,3 +37,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] UI Component Library Implementation — done
 - [x] Landing Page Redesign — done
 - [x] BookCard Enhancement — done
+- [ ] PDF Viewer UI/UX Polish — in progress (Issue #56)
