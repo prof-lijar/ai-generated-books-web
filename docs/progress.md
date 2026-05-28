@@ -7,7 +7,7 @@ Iteration — Final UI polish and layout consistency.
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Assigned Frontend to fix layout consistency on the About page (#67).
+- Updated work plan to prioritize the final layout fix on the About page.
 
 ## What Is In Progress
 - [ ] Apply global Navbar and Footer to the About page (#67)
@@ -16,7 +16,7 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - None.
 
 ## Next Cycle Plan
-- Once #67 is merged, the project should be considered fully complete.
+- Once #67 is completed and merged, the project will be fully delivered.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
