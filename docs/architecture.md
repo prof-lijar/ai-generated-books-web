@@ -9,10 +9,14 @@ The platform is a Next.js application that serves as a frontend for the `prof-li
 2. **Listing**: The GitHub API returns the contents of the books directory. The app filters for `.pdf` files.
 3. **Navigation**: The user selects a book, which navigates to `/books/[filename]`.
 4. **Viewing**: The `Reader Page` constructs the raw GitHub URL (`https://raw.githubusercontent.com/...`) and passes it to the PDF viewer component.
+5. **Requesting**: The `Request Book Page` collects user input and sends it to a Telegram channel via a Telegram Bot API.
 
 ### 2.2 API Strategy
-- **Endpoint**: `GET /repos/prof-lijar/ai-generated-books/contents/`
-- **Authentication**: Use a `GITHUB_TOKEN` stored in environment variables to increase rate limits (from 60 to 5,000 requests per hour).
+- **GitHub API**: `GET /repos/prof-lijar/ai-generated-books/contents/`
+- **Telegram API**: `POST /bot<TOKEN>/sendMessage`
+- **Authentication**: 
+  - `GITHUB_TOKEN` for GitHub API rate limits.
+  - `TELEGRAM_BOT_TOKEN` for sending requests.
 - **Caching**: Implement Next.js `fetch` caching or `revalidate` tags to avoid hitting the API on every single page load.
 
 ### 2.3 Component Hierarchy
@@ -24,6 +28,8 @@ The platform is a Next.js application that serves as a frontend for the `prof-li
 - `app/books/[slug]/page.tsx` (Reader):
   - `PDFViewer`: Component wrapping the PDF rendering logic.
   - `ReaderControls`: Toolbar for zoom, page navigation, and download.
+- `app/request-book/page.tsx` (Request):
+  - `RequestBookForm`: Form to collect book title and description.
 
 ### 2.4 PDF Rendering Strategy
 To balance "production-ready" and "simple/fast to ship":
@@ -43,19 +49,30 @@ interface Book {
 }
 ```
 
+### BookRequest Interface
+```typescript
+interface BookRequest {
+  title: string;
+  description: string;
+}
+```
+
 ## 4. Project Structure
 ```text
 src/
 ├── app/
-│   ├── api/            # API routes (e.g., /api/books)
+│   ├── api/            # API routes (e.g., /api/books, /api/request-book)
 │   ├── books/          # Reader pages ([slug])
+│   ├── request-book/   # Book request page
 │   └── page.tsx        # Library page
 ├── components/
 │   ├── ui/             # Basic UI elements (Button, Input)
 │   ├── library/        # Library-specific components (BookCard, SearchBar)
-│   └── reader/         # Reader-specific components (PDFViewer, Controls)
+│   ├── reader/         # Reader-specific components (PDFViewer, Controls)
+│   └── request/        # Request-specific components (RequestBookForm)
 ├── lib/
 │   ├── github.ts       # GitHub API client
+│   ├── telegram.ts     # Telegram API client
 │   └── utils.ts        # Helper functions
 └── types/
     └── index.ts        # TypeScript type definitions
@@ -63,3 +80,5 @@ src/
 
 ## 5. Environment Variables
 - `GITHUB_TOKEN`: Personal Access Token for GitHub API rate limiting.
+- `TELEGRAM_BOT_TOKEN`: Token for the Telegram Bot to send requests.
+- `TELEGRAM_CHAT_ID`: The ID of the channel/group where requests should be sent.
