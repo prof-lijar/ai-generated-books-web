@@ -1,29 +1,28 @@
 # Project Progress
 
 ## Current Phase
-development — Addressing a critical P0 crash in the PDF viewer.
+iteration — Core goals achieved, performing final validation.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel, react-pdf.
 
 ## What Was Completed This Cycle
-- Identified critical runtime error in PDFViewer (Issue #25).
-- Reassigned the bug to Frontend as a P0 priority (Issue #26).
+- Fixed critical PDFViewer runtime crash using dynamic imports with SSR disabled (Issue #26).
+- Resolved "Fit to Width" stub functionality in the PDF viewer (Issue #24).
 
 ## What Is In Progress
-- [ ] Fixing PDFViewer crash/compatibility issues (Issue #26)
+- Final end-to-end validation of the book reading flow.
 
 ## What Is Blocked
-- The reader page is currently inaccessible due to the runtime crash.
+- None.
 
 ## Next Cycle Plan
-- Frontend to implement dynamic imports and worker configuration to resolve the `pdfjs-dist` crash.
-- QA to verify the fix once a PR is submitted.
+- Assign QA to perform a final sanity check on the library and reader pages to ensure all requirements are met and no regressions exist.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
 - [x] Search/Filter functional — done
-- [x] PDF Reader Page (embedded viewer) — **REGRESSION (Issue #26)**
+- [x] PDF Reader Page (embedded viewer) — done
 - [x] PDF Controls (zoom, navigation, fit-to-width) — done
 - [x] PDF Loading Reliability — done
 - [x] Responsive UI Audit — completed
