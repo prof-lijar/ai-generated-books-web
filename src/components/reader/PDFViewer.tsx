@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { Button } from "../ui/Button";
 
@@ -11,13 +11,27 @@ interface PDFViewerProps {
   url: string;
 }
 
+interface PDFPage {
+  view: [number, number, number, number];
+}
+
 export const PDFViewer = ({ url }: PDFViewerProps) => {
   const [numPages, setNumPages] = useState<number>(0);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState<number>(1.0);
+  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [pageWidth, setPageWidth] = useState<number>(0);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
+  }
+
+  function onPageLoadSuccess(page: PDFPage) {
+    // page.view contains [x, y, width, height]
+    if (page && page.view) {
+      setPageWidth(page.view[2]);
+    }
   }
 
   const changePage = (offset: number) => {
@@ -29,8 +43,12 @@ export const PDFViewer = ({ url }: PDFViewerProps) => {
   };
 
   const fitToWidth = () => {
-    // Simplified: in a real scenario we'd need to calculate container width
-    setScale(1.0);
+    if (containerRef.current && pageWidth > 0) {
+      // p-4 is 1rem (16px) on each side, so 32px total
+      const containerWidth = containerRef.current.clientWidth - 32;
+      const newScale = containerWidth / pageWidth;
+      setScale(Math.min(Math.max(0.5, newScale), 3.0));
+    }
   };
 
   return (
@@ -87,7 +105,7 @@ export const PDFViewer = ({ url }: PDFViewerProps) => {
       </div>
 
       {/* PDF Content */}
-      <div className="flex-1 overflow-auto p-4 flex justify-center">
+      <div ref={containerRef} className="flex-1 overflow-auto p-4 flex justify-center">
         <div className="shadow-lg bg-white">
           <Document
             file={url}
@@ -98,6 +116,7 @@ export const PDFViewer = ({ url }: PDFViewerProps) => {
             <Page 
               pageNumber={pageNumber} 
               scale={scale} 
+              onLoadSuccess={onPageLoadSuccess}
               renderTextLayer={false} 
               renderAnnotationLayer={false}
             />
