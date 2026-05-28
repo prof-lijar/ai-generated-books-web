@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI-Generated Books Web Platform
 
-## Getting Started
+A production-ready web application that allows users to browse and read AI-generated books hosted in the [prof-lijar/ai-generated-books](https://github.com/prof-lijar/ai-generated-books) repository.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Library View**: Browse all available AI-generated books with search and filtering.
+- **In-Browser PDF Reader**: A professional PDF viewing experience with:
+  - Next/Previous page navigation
+  - Zoom in/out
+  - Fit to width
+  - Direct download
+  - Open in new tab
+- **Responsive Design**: Fully optimized for both desktop and mobile devices.
+- **Dynamic Data**: Fetches book lists and content directly from the source GitHub repository.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **API**: [GitHub REST API](https://docs.github.com/en/rest)
+- **Deployment**: Optimized for [Vercel](https://vercel.com/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Setup & Installation
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js 18.x or later
+- npm (or yarn/pnpm)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Local Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/prof-lijar/ai-generated-books-web.git
+   cd ai-generated-books-web
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Environment Configuration (Optional)**:
+   Create a `.env.local` file in the root directory to increase GitHub API rate limits:
+   ```env
+   GITHUB_TOKEN=your_personal_access_token_here
+   ```
+   *Note: The app works without a token, but you may hit rate limits if you browse many books quickly.*
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+5. **Open the app**:
+   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub.
+2. Import the project into the [Vercel Dashboard](https://vercel.com/new).
+3. (Optional) Add the `GITHUB_TOKEN` environment variable in the Vercel project settings.
+4. Deploy.
+
+### Other Platforms
+
+Since this is a standard Next.js application, it can be deployed to any platform supporting Node.js or static exports (Netlify, Railway, Fly.io, etc.).
+
+## 🤝 Contributing
+
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License.
