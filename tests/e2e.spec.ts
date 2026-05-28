@@ -49,11 +49,9 @@ test.describe('AI Books Web Platform E2E', () => {
     // Verify we are on the reader page
     await expect(page).toHaveURL(/\/books\/.+/);
     
-    // Verify PDF viewer controls are present
-    await expect(page.locator('text=Page 1 of')).toBeVisible();
-    await expect(page.locator('text=Zoom In')).toBeVisible();
-    await expect(page.locator('text=Zoom Out')).toBeVisible();
-    await expect(page.locator('text=Fit to Width')).toBeVisible();
+    // PDF viewer controls are now handled by the browser's native PDF viewer via iframe
+    // We verify that the page loaded and the PDF container is present
+    await expect(page.locator('iframe')).toBeVisible();
   });
 
   test('should navigate back from reader to library', async ({ page }) => {
