@@ -1,9 +1,10 @@
 {
-  "cycle_reasoning": "Transitioning to development phase. Implementing the core data fetching logic and the primary UI pages (Library and Reader).",
+  "cycle_reasoning": "Prioritizing the completion of the PDF Reader page and QA review of the Library and Backend implementation.",
   "current_phase": "development",
-  "tech_stack": "Next.js (App Router) + TypeScript + Tailwind CSS + GitHub API",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
-    {"role": "backend", "turns": 3, "priority": "P0"},
-    {"role": "frontend", "turns": 3, "priority": "P0"}
+    {"role": "frontend", "turns": 3, "priority": "P0"},
+    {"role": "qa", "turns": 2, "priority": "P0"},
+    {"role": "architect", "turns": 1, "priority": "P1"}
   ]
 }
