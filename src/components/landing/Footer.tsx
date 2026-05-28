@@ -31,9 +31,9 @@ export const Footer = () => {
             >
               GitHub
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <Link href="/privacy" className="hover:text-primary transition-colors">
               Privacy
-            </a>
+            </Link>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-border text-center text-text-muted text-xs">
