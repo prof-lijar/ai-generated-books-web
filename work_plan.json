@@ -1,6 +1,8 @@
 {
-  "cycle_reasoning": "Project is feature-complete and has reached Definition of Done. No active tasks remaining.",
-  "current_phase": "iteration",
-  "tech_stack": "Next.js / TypeScript / Tailwind",
-  "assignments": []
+  "cycle_reasoning": "Critical P0 bug: PDF viewer is crashing on the reader page. Reverting to development phase to fix compatibility issues between react-pdf and Next.js SSR.",
+  "current_phase": "development",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, react-pdf",
+  "assignments": [
+    {"role": "frontend", "turns": 3, "priority": "P0"}
+  ]
 }
