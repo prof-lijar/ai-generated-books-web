@@ -1,6 +1,8 @@
 {
-  "cycle_reasoning": "Project is complete. All core objectives and delivery requirements have been met.",
-  "current_phase": "deployment",
+  "cycle_reasoning": "Fix critical bug #22 where books in subdirectories are not being fetched, which is a blocker for the core functionality.",
+  "current_phase": "development",
   "tech_stack": "Next.js/TypeScript/Tailwind",
-  "assignments": []
+  "assignments": [
+    {"role": "backend", "turns": 3, "priority": "P0"}
+  ]
 }
