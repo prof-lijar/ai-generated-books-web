@@ -1,8 +1,6 @@
 {
-  "cycle_reasoning": "Fixing the final remaining bug in the PDF viewer: implementing the 'Fit to Width' functionality.",
-  "current_phase": "development",
-  "tech_stack": "Next.js, TypeScript, Tailwind CSS, react-pdf",
-  "assignments": [
-    {"role": "frontend", "turns": 3, "priority": "P2"}
-  ]
+  "cycle_reasoning": "Project is feature-complete and has reached Definition of Done. No active tasks remaining.",
+  "current_phase": "iteration",
+  "tech_stack": "Next.js / TypeScript / Tailwind",
+  "assignments": []
 }
