@@ -1,31 +1,33 @@
 # Project Progress
 
 ## Current Phase
-architecture — Initializing the project and designing the system architecture.
+development — Implementing the core functionality: data fetching and the user interface.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel.
 
 ## What Was Completed This Cycle
-- [x] Defined Product Vision (`docs/vision.md`)
-- [x] Defined Product Specification (`docs/product-spec.md`)
-- [x] Defined Tech Stack (`docs/tech-stack.md`)
-- [x] Created Architecture issue for project initialization.
+- [x] [ARCHITECTURE] Project Initialization and System Design (Issue #3)
+- [x] Project skeleton created with Next.js and Tailwind CSS.
+- [x] Architecture documentation completed.
 
 ## What Is In Progress
-- [#3] [ARCHITECTURE] Project Initialization and System Design (Assigned to Architect)
+- [#4] [BACKEND] Implement GitHub API Client and Books Data Fetching
+- [#5] [FRONTEND] Build Library Page with Search and Filter
+- [#6] [FRONTEND] Build PDF Reader Page with Viewer Controls
 
 ## What Is Blocked
 - None
 
 ## Next Cycle Plan
-- Architect will initialize the project and create the architecture document.
-- Once architecture is complete, I will assign Frontend and Backend work for the library and reader pages.
+- Backend will implement the GitHub API integration.
+- Frontend will build the Library and Reader pages.
+- QA will begin reviewing implementation once PRs are opened.
 
 ## Feature Checklist
-- [ ] Library Page (fetch books from GitHub) — not started
-- [ ] Search/Filter functional — not started
-- [ ] PDF Reader Page (embedded viewer) — not started
-- [ ] PDF Controls (zoom, navigation) — not started
-- [ ] Responsive UI — not started
+- [ ] Library Page (fetch books from GitHub) — in progress (Issue #5)
+- [ ] Search/Filter functional — in progress (Issue #5)
+- [ ] PDF Reader Page (embedded viewer) — in progress (Issue #6)
+- [ ] PDF Controls (zoom, navigation) — in progress (Issue #6)
+- [ ] Responsive UI — in progress
 - [ ] CI/CD Pipeline — not started

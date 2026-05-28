@@ -1,8 +1,9 @@
 {
-  "cycle_reasoning": "Moving from Discovery to Architecture phase. Establishing the foundation for the project using Next.js and TypeScript.",
-  "current_phase": "architecture",
-  "tech_stack": "Next.js / TypeScript / Tailwind CSS / GitHub API",
+  "cycle_reasoning": "Transitioning to development phase. Implementing the core data fetching logic and the primary UI pages (Library and Reader).",
+  "current_phase": "development",
+  "tech_stack": "Next.js (App Router) + TypeScript + Tailwind CSS + GitHub API",
   "assignments": [
-    {"role": "architect", "turns": 2, "priority": "P0"}
+    {"role": "backend", "turns": 3, "priority": "P0"},
+    {"role": "frontend", "turns": 3, "priority": "P0"}
   ]
 }
