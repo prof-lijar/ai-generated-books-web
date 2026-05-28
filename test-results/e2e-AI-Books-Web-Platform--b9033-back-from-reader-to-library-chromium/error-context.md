@@ -7,7 +7,7 @@
 # Test info
 
 - Name: e2e.spec.ts >> AI Books Web Platform E2E >> should navigate back from reader to library
-- Location: tests/e2e.spec.ts:59:7
+- Location: tests/e2e.spec.ts:57:7
 
 # Error details
 

@@ -7,7 +7,7 @@
 # Test info
 
 - Name: e2e.spec.ts >> AI Books Web Platform E2E >> should verify PDF viewer action buttons
-- Location: tests/e2e.spec.ts:71:7
+- Location: tests/e2e.spec.ts:69:7
 
 # Error details
 
