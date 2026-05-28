@@ -2,6 +2,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { fetchBooks } from "@/lib/github";
+import { notFound } from "next/navigation";
 
 // Dynamically import PDFViewer with SSR disabled to prevent pdfjs-dist from running on the server
 const PDFViewer = dynamic(
@@ -15,13 +17,18 @@ interface PageProps {
   };
 }
 
-export default function ReaderPage({ params }: PageProps) {
+export default async function ReaderPage({ params }: PageProps) {
   const { slug } = params;
   
-  // Construct the raw GitHub URL
-  // Repository: prof-lijar/ai-generated-books
-  // Assuming books are in the 'books/' directory on the 'main' branch
-  const pdfUrl = `https://raw.githubusercontent.com/prof-lijar/ai-generated-books/main/books/${slug}`;
+  // Fetch books to find the correct URL for the given filename (slug)
+  const books = await fetchBooks();
+  const book = books.find((b) => b.filename === decodeURIComponent(slug));
+
+  if (!book) {
+    return notFound();
+  }
+
+  const pdfUrl = book.url;
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
