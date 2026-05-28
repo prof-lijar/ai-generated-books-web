@@ -1,6 +1,6 @@
 {
-  "cycle_reasoning": "Project is in maintenance mode with no pending issues or requests. No agents are needed this cycle.",
+  "cycle_reasoning": "Project is in maintenance mode. No active development required.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
+  "tech_stack": "Next.js / TypeScript / Tailwind",
   "assignments": []
 }
