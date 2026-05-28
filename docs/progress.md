@@ -1,23 +1,24 @@
 # Project Progress
 
 ## Current Phase
-iteration — Core goals achieved, performing final validation.
+iteration — Final stability and validation phase.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel, react-pdf.
 
 ## What Was Completed This Cycle
-- Fixed critical PDFViewer runtime crash using dynamic imports with SSR disabled (Issue #26).
-- Resolved "Fit to Width" stub functionality in the PDF viewer (Issue #24).
+- (Cycle start) Transitioning to final bug fixes and E2E validation.
 
 ## What Is In Progress
-- Final end-to-end validation of the book reading flow.
+- [PR #31] Implement E2E tests for critical paths (Library and Reader).
+- [Issue #29] Resolve PDF viewer crash due to pdfjs-dist version collision (P0).
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Assign QA to perform a final sanity check on the library and reader pages to ensure all requirements are met and no regressions exist.
+- Review and merge E2E tests.
+- Fix the critical PDF viewer version collision bug to ensure production stability.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -28,3 +29,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel, react-pdf.
 - [x] Responsive UI Audit — completed
 - [x] CI/CD Pipeline & Deployment — completed
 - [x] Professional Documentation (README) — done
+- [ ] E2E Test Suite — in progress (PR #31)
+- [ ] Final Stability Pass (Bug #29) — in progress

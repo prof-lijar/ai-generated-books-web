@@ -1,12 +1,10 @@
 {
-  "cycle_reasoning": "Core features are implemented and critical bugs are fixed. This cycle focuses on final quality assurance to ensure the product is production-ready and meets all requirements.",
-  "current_phase": "quality",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, react-pdf",
+  "cycle_reasoning": "Prioritize clearing the PR queue (PR #31) and resolving the critical P0 bug regarding PDF viewer crashes (Issue #29).",
+  "current_phase": "iteration",
+  "tech_stack": "Next.js, TypeScript, Tailwind CSS, GitHub API, react-pdf",
   "assignments": [
-    {
-      "role": "qa",
-      "turns": 3,
-      "priority": "P0"
-    }
+    {"role": "qa", "turns": 2, "priority": "P0"},
+    {"role": "backend", "turns": 3, "priority": "P0"},
+    {"role": "architect", "turns": 1, "priority": "P1"}
   ]
 }
