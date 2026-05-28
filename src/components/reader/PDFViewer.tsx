@@ -12,7 +12,7 @@ interface PDFViewerProps {
 }
 
 interface PDFPage {
-  view: [number, number, number, number];
+  view: number[];
 }
 
 export const PDFViewer = ({ url }: PDFViewerProps) => {
@@ -29,7 +29,7 @@ export const PDFViewer = ({ url }: PDFViewerProps) => {
 
   function onPageLoadSuccess(page: PDFPage) {
     // page.view contains [x, y, width, height]
-    if (page && page.view) {
+    if (page && page.view && page.view.length >= 3) {
       setPageWidth(page.view[2]);
     }
   }
