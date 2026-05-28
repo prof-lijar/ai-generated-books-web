@@ -1,10 +1,9 @@
 {
-  "cycle_reasoning": "Fixing critical syntax corruption (Issue #50) that blocks builds, and reviewing the UI component library (PR #49) to unblock frontend polish.",
+  "cycle_reasoning": "Prioritize clearing the PR queue by reviewing and merging the UI component library before proceeding with the landing page and BookCard redesigns.",
   "current_phase": "iteration",
   "tech_stack": "Next.js, TypeScript, Tailwind CSS",
   "assignments": [
-    {"role": "backend", "turns": 3, "priority": "P0"},
-    {"role": "qa", "turns": 2, "priority": "P1"},
-    {"role": "architect", "turns": 1, "priority": "P1"}
+    {"role": "qa", "turns": 2, "priority": "P0"},
+    {"role": "architect", "turns": 1, "priority": "P0"}
   ]
 }
