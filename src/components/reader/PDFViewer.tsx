@@ -18,9 +18,9 @@ export const PDFViewer = ({ url, title }: PDFViewerProps) => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full bg-bg-main overflow-hidden">
+    <div className="flex flex-col h-dvh w-full bg-bg-main overflow-hidden">
       {/* Toolbar */}
-      <header className="flex items-center justify-between px-4 py-3 bg-bg-surface border-b border-border shadow-sm z-10">
+      <header className="flex items-center justify-between px-4 py-3 bg-bg-surface border-b border-border shadow-sm z-10 shrink-0">
         <div className="flex items-center gap-3 overflow-hidden">
           <Link href="/">
             <Button variant="ghost" size="sm" className="hidden sm:flex">
@@ -37,7 +37,7 @@ export const PDFViewer = ({ url, title }: PDFViewerProps) => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <a 
             href={proxyUrl} 
             download 
@@ -62,7 +62,7 @@ export const PDFViewer = ({ url, title }: PDFViewerProps) => {
       </header>
 
       {/* Main Viewer Area */}
-      <main className="relative flex-1 w-full h-full bg-bg-muted">
+      <main className="relative flex-1 min-h-0 w-full bg-bg-muted">
         {isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-bg-main">
             <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
@@ -79,7 +79,7 @@ export const PDFViewer = ({ url, title }: PDFViewerProps) => {
       </main>
 
       {/* Mobile Bottom Bar - Quick Actions */}
-      <div className="sm:hidden flex items-center justify-around p-3 bg-bg-surface border-t border-border">
+      <div className="sm:hidden flex items-center justify-around p-3 bg-bg-surface border-t border-border shrink-0">
         <Link href="/" className="flex flex-col items-center text-text-muted hover:text-primary transition-colors">
           <span className="text-xs font-medium">Library</span>
         </Link>
