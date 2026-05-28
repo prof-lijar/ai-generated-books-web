@@ -1,9 +1,9 @@
 {
-  "cycle_reasoning": "Focusing on fixing critical bugs #14 and #16 to ensure books are correctly fetched and the PDF viewer is fully functional.",
+  "cycle_reasoning": "Focus on clearing the PR queue for critical PDF loading and fetching fixes before proceeding to any further work.",
   "current_phase": "quality",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, GitHub API",
   "assignments": [
-    {"role": "backend", "turns": 3, "priority": "P0"},
-    {"role": "frontend", "turns": 2, "priority": "P0"}
+    {"role": "qa", "turns": 3, "priority": "P0"},
+    {"role": "architect", "turns": 1, "priority": "P1"}
   ]
 }
