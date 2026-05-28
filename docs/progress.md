@@ -1,24 +1,24 @@
 # Project Progress
 
 ## Current Phase
-Completed — The project has met all functional requirements and passed final stability and responsiveness audits.
+Iteration — Adding detailed provenance information to the About page regarding the AI Book-Writer system.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Finalized PDF viewer responsiveness for mobile and tablet devices.
-- Added a professional Footer and a dedicated About page to enhance site completeness.
-- Verified all core functional requirements are met and stable.
+- Analyzed the `book-writer` repository to understand the AI agent pipeline.
+- Created detailed implementation issue #64 to update the About page.
+- Closed issue #63.
 
 ## What Is In Progress
-- None. Project is complete.
+- [ ] Update About page with AI Book-Writer details (#64)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- No further development planned. Project is ready for hand-off/maintenance.
+- Frontend will implement the content updates on the About page based on the research into the multi-agent pipeline.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -37,3 +37,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] BookCard Enhancement — done
 - [x] PDF Viewer UI/UX Polish — done
 - [x] About Page & Footer — done
+- [ ] Detailed AI-Writer provenance on About page — in progress
