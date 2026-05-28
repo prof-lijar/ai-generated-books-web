@@ -13,17 +13,30 @@ export default function RequestBookForm() {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const [formData, setFormData] = useState({
     title: '',
+    email: '',
     description: '',
   });
-  const [validationError, setValidationError] = useState<string | undefined>(undefined);
+  const [errors, setErrors] = useState<{ title?: string; email?: string }>({});
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setValidationError(undefined);
+    setErrors({});
     setErrorMessage('');
 
+    const newErrors: { title?: string; email?: string } = {};
     if (!formData.title.trim()) {
-      setValidationError('Book title is required');
+      newErrors.title = 'Book title is required';
+    }
+    if (!formData.email.trim() || !validateEmail(formData.email)) {
+      newErrors.email = 'A valid email address is required';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
 
@@ -46,6 +59,7 @@ export default function RequestBookForm() {
     } catch (err: unknown) {
       const error = err as Error;
       setErrorMessage(error.message || 'Something went wrong. Please try again later.');
+      setStatus('error');
     }
   };
 
@@ -75,7 +89,17 @@ export default function RequestBookForm() {
         placeholder="e.g., The History of Quantum Computing"
         value={formData.title}
         onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-        error={validationError}
+        error={errors.title}
+        disabled={status === 'loading'}
+        required
+      />
+      <Input
+        label="Email Address"
+        type="email"
+        placeholder="e.g., user@example.com"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        error={errors.email}
         disabled={status === 'loading'}
         required
       />
