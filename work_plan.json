@@ -1,12 +1,9 @@
 {
-  "cycle_reasoning": "Fix critical PDF viewer incompatibility by replacing react-pdf with iframe as described in Issue #33",
-  "current_phase": "development",
-  "tech_stack": "Next.js/TypeScript (Removing react-pdf)",
+  "cycle_reasoning": "Focusing on clearing the PR queue and validating the native PDF viewer implementation via updated E2E tests.",
+  "current_phase": "quality",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, Playwright",
   "assignments": [
-    {
-      "role": "backend",
-      "turns": 3,
-      "priority": "P0"
-    }
+    {"role": "qa", "turns": 2, "priority": "P0"},
+    {"role": "architect", "turns": 1, "priority": "P1"}
   ]
 }
