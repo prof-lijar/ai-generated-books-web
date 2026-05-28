@@ -1,24 +1,25 @@
 # Project Progress
 
 ## Current Phase
-Completed — The platform is fully functional, polished, and ready for production.
+Iteration — Addressing a critical responsiveness bug in the PDF viewer.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- [Frontend] Final polish of the PDF viewer UI/UX and responsive design (PR #57).
-- All functional requirements from the product spec have been implemented.
-- Final QA pass completed.
+- Detected a regression/unresolved issue with PDF viewer responsiveness on mobile/tablet.
+- Re-opened the project for iteration to ensure production quality.
 
 ## What Is In Progress
-- None.
+- Issue #59: Fix PDF viewer responsiveness on mobile and tablet.
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Project is complete. No further cycles planned.
+- Designer to analyze the responsiveness issue.
+- Frontend to implement CSS/Layout fixes.
+- QA to verify across multiple device sizes.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -26,13 +27,13 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] PDF Reader Page (embedded viewer) — done
 - [x] PDF Controls (zoom, navigation, fit-to-width) — done
 - [x] PDF Loading Reliability — done
-- [x] Responsive UI Audit — completed
+- [x] Responsive UI Audit — fixing regression (Issue #59)
 - [x] CI/CD Pipeline & Deployment — completed
 - [x] Professional Documentation (README) — done
 - [x] E2E/Unit Test Suite — done
-- [x] Final Stability Pass — completed
+- [x] Final Stability Pass — in progress
 - [x] Brand Identity & Site Metadata — done
 - [x] UI Component Library Implementation — done
 - [x] Landing Page Redesign — done
 - [x] BookCard Enhancement — done
-- [x] PDF Viewer UI/UX Polish — done
+- [x] PDF Viewer UI/UX Polish — in progress
