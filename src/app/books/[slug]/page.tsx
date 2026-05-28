@@ -1,7 +1,13 @@
 import React from "react";
-import { PDFViewer } from "@/components/reader/PDFViewer";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+
+// Dynamically import PDFViewer with SSR disabled to prevent pdfjs-dist from running on the server
+const PDFViewer = dynamic(
+  () => import("@/components/reader/PDFViewer").then((mod) => mod.PDFViewer),
+  { ssr: false }
+);
 
 interface PageProps {
   params: {
