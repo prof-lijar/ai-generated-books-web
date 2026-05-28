@@ -16,32 +16,57 @@ export async function fetchBooks(): Promise<Book[]> {
   }
 
   try {
-    // Fetch repository contents
-    const response = await fetch(`${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`, {
+    // Fetch repository root contents
+    const rootResponse = await fetch(`${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`, {
       headers,
       next: { revalidate: 3600 }, // Cache for 1 hour
     });
 
-    if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    if (!rootResponse.ok) {
+      throw new Error(`GitHub API error: ${rootResponse.status} ${rootResponse.statusText}`);
     }
 
-    const contents = (await response.json()) as GitHubContent[];
+    const rootContents = (await rootResponse.json()) as GitHubContent[];
+    
+    // We look for directories at the root
+    const directories = rootContents.filter((item) => item.type === 'dir');
 
-    // Filter for PDF files and map to Book interface
-    const books = contents
-      .filter((item) => item.name.endsWith('.pdf'))
-      .map((item) => {
-        return {
-          title: item.name.replace('.pdf', '').replace(/_/g, ' '),
-          filename: item.name,
-          url: `${RAW_URL}/${GITHUB_OWNER}/${GITHUB_REPO}/main/${item.path}`,
-          size: item.size,
-          updatedAt: '', 
-        };
-      });
+    const allBooks: Book[] = [];
 
-    return books;
+    // Iterate through each directory to find PDF files
+    // Use Promise.all to fetch directory contents in parallel
+    await Promise.all(
+      directories.map(async (dir) => {
+        try {
+          const dirResponse = await fetch(`${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${dir.path}`, {
+            headers,
+            next: { revalidate: 3600 },
+          });
+
+          if (!dirResponse.ok) {
+            console.warn(`Could not fetch contents of directory ${dir.path}: ${dirResponse.status}`);
+            return;
+          }
+
+          const dirContents = (await dirResponse.json()) as GitHubContent[];
+          const pdfFiles = dirContents.filter((item) => item.name.endsWith('.pdf'));
+
+          for (const pdf of pdfFiles) {
+            allBooks.push({
+              title: pdf.name.replace('.pdf', '').replace(/_/g, ' '),
+              filename: pdf.name,
+              url: `${RAW_URL}/${GITHUB_OWNER}/${GITHUB_REPO}/main/${pdf.path}`,
+              size: pdf.size,
+              updatedAt: '', 
+            });
+          }
+        } catch (error) {
+          console.error(`Error fetching contents of directory ${dir.path}:`, error);
+        }
+      })
+    );
+
+    return allBooks;
   } catch (error) {
     console.error('Error fetching books from GitHub:', error);
     throw error;
