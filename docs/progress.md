@@ -1,24 +1,26 @@
 # Project Progress
 
 ## Current Phase
-Complete — All features implemented, tested, and documented.
+Development — Implementing Book Request functionality.
 
 ## Tech Stack
-Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
+Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 
 ## What Was Completed This Cycle
-- Implemented Privacy Policy page.
-- Updated footer links to include Privacy Policy.
-- Finalized project documentation and progress log.
+- Planned implementation of Book Request feature.
+- Created design and backend issues for the Book Request page and API.
 
 ## What Is In Progress
-- None.
+- [ ] Design Book Request Page (Issue #79)
+- [ ] Implement Book Request API and Telegram Integration (Issue #80)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Project is complete. No further cycles planned.
+- Designer to provide UI specs for the request form.
+- Backend to implement the Telegram integration.
+- Frontend to build the page once design is ready.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -41,3 +43,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] Layout consistency on About page — done
 - [x] Global Responsive Navbar — done
 - [x] Privacy Policy Page — done
+- [ ] Book Request Page (Telegram Integration) — in progress
