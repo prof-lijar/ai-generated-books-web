@@ -16,10 +16,9 @@ export async function fetchBooks(): Promise<Book[]> {
   }
 
   try {
-    // Fetch repository contents
     const response = await fetch(`${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`, {
       headers,
-      next: { revalidate: 3600 }, // Cache for 1 hour
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
@@ -27,19 +26,31 @@ export async function fetchBooks(): Promise<Book[]> {
     }
 
     const contents = (await response.json()) as GitHubContent[];
+    const dirs = contents.filter((item) => item.type === 'dir');
 
-    // Filter for PDF files and map to Book interface
-    const books = contents
-      .filter((item) => item.name.endsWith('.pdf'))
-      .map((item) => {
-        return {
-          title: item.name.replace('.pdf', '').replace(/_/g, ' '),
-          filename: item.name,
-          url: `${RAW_URL}/${GITHUB_OWNER}/${GITHUB_REPO}/main/${item.path}`,
-          size: item.size,
-          updatedAt: '', 
-        };
-      });
+    const books: Book[] = [];
+
+    for (const dir of dirs) {
+      const dirResponse = await fetch(
+        `${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${dir.path}`,
+        { headers, next: { revalidate: 3600 } },
+      );
+
+      if (!dirResponse.ok) continue;
+
+      const dirContents = (await dirResponse.json()) as GitHubContent[];
+      const pdfs = dirContents.filter((item) => item.name.endsWith('.pdf'));
+
+      for (const pdf of pdfs) {
+        books.push({
+          title: pdf.name.replace('.pdf', '').replace(/[-_]/g, ' '),
+          filename: pdf.name,
+          url: `${RAW_URL}/${GITHUB_OWNER}/${GITHUB_REPO}/main/${pdf.path}`,
+          size: pdf.size,
+          updatedAt: '',
+        });
+      }
+    }
 
     return books;
   } catch (error) {
