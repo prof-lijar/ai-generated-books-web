@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 
@@ -44,13 +45,15 @@ export const Hero = ({ onScrollToLibrary }: HeroProps) => {
             >
               Browse Library
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto px-8 py-4 text-lg"
-            >
-              Learn More
-            </Button>
+            <Link href="/request" className="w-full sm:w-auto">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="w-full sm:w-auto px-8 py-4 text-lg"
+              >
+                Request a Book
+              </Button>
+            </Link>
           </div>
         </div>
       </Container>

@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Library', href: '/' },
+    { name: 'Request a Book', href: '/request' },
     { name: 'About', href: '/about' },
   ];
 
