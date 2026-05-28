@@ -1,24 +1,24 @@
 # Project Progress
 
 ## Current Phase
-quality — Finalizing tests and ensuring stability before project completion.
+quality — Finalizing the test suite migration and ensuring stability.
 
 ## Tech Stack
-Next.js (App Router), TypeScript, Tailwind CSS, Vitest (migrating from Playwright).
+Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Closed Issue #39: Confirmed PR queue is clean (PR #37 merged, PR #34 closed).
+- [PM] Updated work plan to finalize the Vitest migration.
 
 ## What Is In Progress
-- Issue #40: Remove Playwright and replace with vitest unit tests (QA)
+- PR #41: Remove Playwright and replace with vitest unit tests (awaiting QA review)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Complete the migration to Vitest.
-- Run unit tests to validate core logic.
-- Perform a final check against the "Definition of Done" and mark the project as complete.
+- Review and merge PR #41.
+- Final check against "Definition of Done".
+- Mark project as complete.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -29,5 +29,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest (migrating from Playwrigh
 - [x] Responsive UI Audit — completed
 - [x] CI/CD Pipeline & Deployment — completed
 - [x] Professional Documentation (README) — done
-- [ ] E2E/Unit Test Suite — in progress (migrating to Vitest)
+- [ ] E2E/Unit Test Suite — in progress (PR #41)
 - [ ] Final Stability Pass — pending test validation
