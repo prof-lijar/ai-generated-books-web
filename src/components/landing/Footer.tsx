@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Container } from '@/components/ui/Container';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -19,10 +20,20 @@ export const Footer = () => {
           </div>
           
           <div className="flex gap-8 text-sm font-medium text-text-muted">
-            <a href="#" className="hover:text-primary transition-colors">About</a>
-            <a href="#" className="hover:text-primary transition-colors">GitHub</a>
-            <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="hover:text-primary transition-colors">Contact</a>
+            <Link href="/about" className="hover:text-primary transition-colors">
+              About
+            </Link>
+            <a 
+              href="https://github.com/prof-lijar/ai-generated-books" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-primary transition-colors"
+            >
+              GitHub
+            </a>
+            <a href="#" className="hover:text-primary transition-colors">
+              Privacy
+            </a>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-border text-center text-text-muted text-xs">
