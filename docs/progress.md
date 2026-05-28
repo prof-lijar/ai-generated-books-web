@@ -1,24 +1,24 @@
 # Project Progress
 
 ## Current Phase
-Iteration — Adding detailed provenance information to the About page regarding the AI Book-Writer system.
+Iteration — Final UI polish and layout consistency.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Analyzed the `book-writer` repository to understand the AI agent pipeline.
-- Created detailed implementation issue #64 to update the About page.
-- Closed issue #63.
+- Identified missing Navbar/Footer on the About page (Issue #65).
+- Created actionable Frontend issue #67 to resolve layout inconsistency.
+- Closed issue #65.
 
 ## What Is In Progress
-- [ ] Update About page with AI Book-Writer details (#64)
+- [ ] Apply global Navbar and Footer to the About page (#67)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Frontend will implement the content updates on the About page based on the research into the multi-agent pipeline.
+- Frontend will ensure the About page is wrapped in the global layout to maintain UI consistency.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -37,4 +37,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] BookCard Enhancement — done
 - [x] PDF Viewer UI/UX Polish — done
 - [x] About Page & Footer — done
-- [ ] Detailed AI-Writer provenance on About page — in progress
+- [x] Detailed AI-Writer provenance on About page — done
+- [ ] Layout consistency on About page — in progress (PR #X)
