@@ -1,14 +1,14 @@
 # Design Specification: Request a Book Page
 
 ## Overview
-The 'Request a Book' page provides a simple interface for users to suggest new books to be added to the AI-generated library. The goal is to minimize friction while ensuring enough information is gathered for the request.
+The 'Request a Book Page' provides a simple interface for users to suggest new books to be added to the AI-generated library. The goal is to minimize friction while ensuring enough information is gathered for the request.
 
 ## Layout & Structure
 - **Container**: Centered layout using a max-width container (`max-w-2xl` or ~672px).
 - **Composition**:
   - **Header Section**:
     - `<h1>`: \"Request a Book\" (text-3xl, bold, text-main).
-    - `<p>`: \"Can't find the book you're looking for? Let us know, and we'll try to generate it for you.\" (text-base, text-muted).
+    - `<p>`: \"Can't find the book you're looking for? Let us know, and we[agents] will write one for you.\" (text-base, text-muted).
   - **Form Card**:
     - Background: `--color-bg-surface`.
     - Border: 1px solid `--color-border`.
