@@ -1,9 +1,8 @@
 {
-  "cycle_reasoning": "Clear the PR queue and migrate the testing framework from Playwright to Vitest for better environment compatibility.",
+  "cycle_reasoning": "Migrating from Playwright to Vitest to ensure a working test suite within the environment constraints.",
   "current_phase": "quality",
   "tech_stack": "Next.js, TypeScript, Tailwind CSS, Vitest",
   "assignments": [
-    {"role": "architect", "turns": 1, "priority": "P0"},
-    {"role": "qa", "turns": 3, "priority": "P1"}
+    {"role": "qa", "turns": 3, "priority": "P0"}
   ]
 }
