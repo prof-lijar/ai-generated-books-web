@@ -1,9 +1,9 @@
 {
-  "cycle_reasoning": "Prioritizing the PR pipeline by reviewing and merging the DevOps CI/CD setup before addressing the critical PDF loading bug.",
+  "cycle_reasoning": "Fix critical PDF loading bug and implement missing viewer controls in Issue #14.",
   "current_phase": "quality",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, GitHub API",
   "assignments": [
-    {"role": "qa", "turns": 2, "priority": "P0"},
-    {"role": "architect", "turns": 1, "priority": "P0"}
+    {"role": "backend", "turns": 3, "priority": "P0"},
+    {"role": "frontend", "turns": 3, "priority": "P0"}
   ]
 }
