@@ -1,25 +1,24 @@
 # Project Progress
 
 ## Current Phase
-Iteration — Final Polish and Branding
+Completed — The project has met all functional requirements and definition of done.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- [Designer] UI Component Library Implementation merged (PR #49).
-- Blockers for Frontend polish have been removed.
+- [Frontend] Redesign landing page with hero section and better book grid (PR #54).
+- [Frontend] Improve BookCard with better visual design and book metadata (PR #55).
+- Final polish and branding pass completed.
 
 ## What Is In Progress
-- Issue #47: [Frontend] Redesign landing page (P0)
-- Issue #48: [Frontend] Improve BookCard (P1)
+- None.
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Frontend: Implement the landing page redesign (#47) and BookCard enhancements (#48) using the new UI component library.
-- QA: Review the frontend changes once PRs are submitted.
+- No further work planned. The project is now in maintenance mode.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -34,5 +33,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] Final Stability Pass — completed
 - [x] Brand Identity & Site Metadata — done
 - [x] UI Component Library Implementation — done
-- [ ] Landing Page Redesign — in progress (Issue #47)
-- [ ] BookCard Enhancement — in progress (Issue #48)
+- [x] Landing Page Redesign — done
+- [x] BookCard Enhancement — done
