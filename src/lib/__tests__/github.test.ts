@@ -3,107 +3,111 @@ import { fetchBooks } from '../github';
 
 describe('fetchBooks', () => {
   beforeEach(() => {
+    vi.resetAllMocks();
     vi.stubGlobal('fetch', vi.fn());
   });
 
-  it('should correctly parse subdirectory contents and build PDF URLs', async () => {
+  it('should correctly parse subdirectory contents and build book list', async () => {
     const mockRootContents = [
-      { type: 'dir', path: 'book1', name: 'book1' },
-      { type: 'dir', path: 'book2', name: 'book2' },
-      { type: 'file', path: 'README.md', name: 'README.md' },
+      { name: 'book1-dir', path: 'book1-dir', type: 'dir' },
+      { name: 'book2-dir', path: 'book2-dir', type: 'dir' },
+      { name: 'readme.md', path: 'readme.md', type: 'file' },
     ];
 
     const mockBook1Contents = [
-      { name: 'The Great AI.pdf', path: 'book1/The Great AI.pdf', type: 'file', size: 1000, download_url: 'https://github.com/download/1' },
-      { name: 'notes.txt', path: 'book1/notes.txt', type: 'file', size: 100, download_url: 'https://github.com/download/2' },
+      { name: 'The Great Gatsby.pdf', path: 'book1-dir/The Great Gatsby.pdf', type: 'file', size: 1000, download_url: 'https://github.com/download/gatsby.pdf' },
+      { name: 'notes.txt', path: 'book1-dir/notes.txt', type: 'file', size: 100 },
     ];
 
     const mockBook2Contents = [
-      { name: 'AI Mastery.pdf', path: 'book2/AI Mastery.pdf', type: 'file', size: 2000, download_url: 'https://github.com/download/3' },
+      { name: '1984_novel.pdf', path: 'book2-dir/1984_novel.pdf', type: 'file', size: 2000, download_url: 'https://github.com/download/1984.pdf' },
     ];
 
-    (fetch as any).mockImplementation((url: string) => {
+    vi.mocked(fetch).mockImplementation((url: string) => {
       if (url.endsWith('/contents')) {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve(mockRootContents),
-        });
+        } as Response);
       }
-      if (url.endsWith('/contents/book1')) {
+      if (url.endsWith('/contents/book1-dir')) {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve(mockBook1Contents),
-        });
+        } as Response);
       }
-      if (url.endsWith('/contents/book2')) {
+      if (url.endsWith('/contents/book2-dir')) {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve(mockBook2Contents),
-        });
+        } as Response);
       }
-      return Promise.resolve({ ok: false, status: 404 });
+      return Promise.resolve({ ok: false, status: 404 } as Response);
     });
 
     const books = await fetchBooks();
 
     expect(books).toHaveLength(2);
     expect(books[0]).toEqual({
-      title: 'The Great AI',
-      filename: 'The Great AI.pdf',
-      url: 'https://github.com/download/1',
+      title: 'The Great Gatsby',
+      filename: 'The Great Gatsby.pdf',
+      url: 'https://github.com/download/gatsby.pdf',
       size: 1000,
       updatedAt: '',
     });
     expect(books[1]).toEqual({
-      title: 'AI Mastery',
-      filename: 'AI Mastery.pdf',
-      url: 'https://github.com/download/3',
+      title: '1984 novel',
+      filename: '1984_novel.pdf',
+      url: 'https://github.com/download/1984.pdf',
       size: 2000,
       updatedAt: '',
     });
   });
 
-  it('should throw an error if root API call fails', async () => {
-    (fetch as any).mockResolvedValue({
+  it('should throw an error when root fetch fails', async () => {
+    vi.mocked(fetch).mockResolvedValueOnce({
       ok: false,
       status: 500,
       statusText: 'Internal Server Error',
-    });
+    } as Response);
 
     await expect(fetchBooks()).rejects.toThrow('GitHub API error: 500 Internal Server Error');
   });
 
-  it('should continue processing if one subdirectory call fails', async () => {
+  it('should skip directories that fail to fetch', async () => {
     const mockRootContents = [
-      { type: 'dir', path: 'book1', name: 'book1' },
-      { type: 'dir', path: 'book2', name: 'book2' },
+      { name: 'book1-dir', path: 'book1-dir', type: 'dir' },
+      { name: 'book2-dir', path: 'book2-dir', type: 'dir' },
     ];
 
-    const mockBook2Contents = [
-      { name: 'AI Mastery.pdf', path: 'book2/AI Mastery.pdf', type: 'file', size: 2000, download_url: 'https://github.com/download/3' },
+    const mockBook1Contents = [
+      { name: 'book1.pdf', path: 'book1-dir/book1.pdf', type: 'file', size: 100, download_url: 'url1' },
     ];
 
-    (fetch as any).mockImplementation((url: string) => {
+    vi.mocked(fetch).mockImplementation((url: string) => {
       if (url.endsWith('/contents')) {
         return Promise.resolve({
           ok: true,
           json: () => Promise.resolve(mockRootContents),
-        });
+        } as Response);
       }
-      if (url.endsWith('/contents/book1')) {
-        return Promise.resolve({ ok: false, status: 404 });
-      }
-      if (url.endsWith('/contents/book2')) {
+      if (url.endsWith('/contents/book1-dir')) {
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(mockBook2Contents),
-        });
+          json: () => Promise.resolve(mockBook1Contents),
+        } as Response);
       }
-      return Promise.resolve({ ok: false, status: 404 });
+      if (url.endsWith('/contents/book2-dir')) {
+        return Promise.resolve({
+          ok: false,
+          status: 404,
+        } as Response);
+      }
+      return Promise.resolve({ ok: false } as Response);
     });
 
     const books = await fetchBooks();
     expect(books).toHaveLength(1);
-    expect(books[0].filename).toBe('AI Mastery.pdf');
+    expect(books[0].filename).toBe('book1.pdf');
   });
 });
