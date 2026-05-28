@@ -1,9 +1,10 @@
 {
-  "cycle_reasoning": "Clear the PR queue by having QA review the UI component library before Frontend starts the redesigns",
+  "cycle_reasoning": "Fixing critical syntax corruption (Issue #50) that blocks builds, and reviewing the UI component library (PR #49) to unblock frontend polish.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js/TypeScript/Tailwind",
+  "tech_stack": "Next.js, TypeScript, Tailwind CSS",
   "assignments": [
-    {"role": "qa", "turns": 2, "priority": "P0"},
+    {"role": "backend", "turns": 3, "priority": "P0"},
+    {"role": "qa", "turns": 2, "priority": "P1"},
     {"role": "architect", "turns": 1, "priority": "P1"}
   ]
 }
