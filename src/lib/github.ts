@@ -3,7 +3,6 @@ import { Book, GitHubContent } from '@/types';
 const GITHUB_OWNER = 'prof-lijar';
 const GITHUB_REPO = 'ai-generated-books';
 const BASE_URL = 'https://api.github.com';
-const RAW_URL = 'https://raw.githubusercontent.com';
 
 export async function fetchBooks(): Promise<Book[]> {
   const token = process.env.GITHUB_TOKEN;
@@ -26,8 +25,12 @@ export async function fetchBooks(): Promise<Book[]> {
     }
 
     const contents = (await response.json()) as GitHubContent[];
-    const dirs = contents.filter((item) => item.type === 'dir');
+    
+    if (!Array.isArray(contents)) {
+      throw new Error('GitHub API root contents is not an array');
+    }
 
+    const dirs = contents.filter((item) => item.type === 'dir');
     const books: Book[] = [];
 
     for (const dir of dirs) {
@@ -36,16 +39,25 @@ export async function fetchBooks(): Promise<Book[]> {
         { headers, next: { revalidate: 3600 } },
       );
 
-      if (!dirResponse.ok) continue;
+      if (!dirResponse.ok) {
+        console.warn(`Could not fetch contents for directory ${dir.path}: ${dirResponse.status}`);
+        continue;
+      }
 
       const dirContents = (await dirResponse.json()) as GitHubContent[];
-      const pdfs = dirContents.filter((item) => item.name.endsWith('.pdf'));
+      
+      if (!Array.isArray(dirContents)) {
+        console.warn(`Contents for directory ${dir.path} is not an array`);
+        continue;
+      }
+
+      const pdfs = dirContents.filter((item) => item.name.toLowerCase().endsWith('.pdf'));
 
       for (const pdf of pdfs) {
         books.push({
-          title: pdf.name.replace('.pdf', '').replace(/[-_]/g, ' '),
+          title: pdf.name.replace(/\.pdf$/i, '').replace(/[-_]/g, ' '),
           filename: pdf.name,
-          url: `${RAW_URL}/${GITHUB_OWNER}/${GITHUB_REPO}/main/${pdf.path}`,
+          url: pdf.download_url || `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/main/${pdf.path}`,
           size: pdf.size,
           updatedAt: '',
         });
