@@ -1,9 +1,9 @@
 {
-  "cycle_reasoning": "Moving into the final quality and deployment phase. QA will perform E2E testing while DevOps sets up the production environment and CI/CD.",
-  "current_phase": "deployment",
+  "cycle_reasoning": "Prioritizing the PR pipeline by reviewing and merging the DevOps CI/CD setup before addressing the critical PDF loading bug.",
+  "current_phase": "quality",
   "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel",
   "assignments": [
     {"role": "qa", "turns": 2, "priority": "P0"},
-    {"role": "devops", "turns": 2, "priority": "P0"}
+    {"role": "architect", "turns": 1, "priority": "P0"}
   ]
 }
