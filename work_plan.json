@@ -1,7 +1,7 @@
 {
-  "cycle_reasoning": "Final polish: ensuring the About page follows the global layout (Navbar/Footer) to complete the project.",
+  "cycle_reasoning": "Implement the global navigation bar to ensure consistent UX across all pages.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js, TypeScript, Tailwind CSS",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
     {"role": "frontend", "turns": 3, "priority": "P0"}
   ]

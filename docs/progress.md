@@ -1,22 +1,23 @@
 # Project Progress
 
 ## Current Phase
-Iteration — Final UI polish and layout consistency.
+Iteration — Final UI polish and global navigation.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 
 ## What Was Completed This Cycle
-- Updated work plan to prioritize the final layout fix on the About page.
+- Refined Navbar requirements (Issue #68) and created a detailed implementation task for Frontend (#70).
+- Closed Issue #68.
 
 ## What Is In Progress
-- [ ] Apply global Navbar and Footer to the About page (#67)
+- [ ] Implement global responsive Navbar (#70)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Once #67 is completed and merged, the project will be fully delivered.
+- Complete the global Navbar implementation to finalize the user experience and conclude the iteration phase.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -36,4 +37,5 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest.
 - [x] PDF Viewer UI/UX Polish — done
 - [x] About Page & Footer — done
 - [x] Detailed AI-Writer provenance on About page — done
-- [ ] Layout consistency on About page — in progress (#67)
+- [x] Layout consistency on About page — done
+- [ ] Global Responsive Navbar — in progress (#70)
