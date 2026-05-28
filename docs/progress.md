@@ -7,20 +7,19 @@ Development — Implementing Book Request functionality.
 Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 
 ## What Was Completed This Cycle
-- Planned implementation of Book Request feature.
-- Created design and backend issues for the Book Request page and API.
+- Backend implementation of Book Request API and Telegram Integration (Issue #80).
+- Design specifications for the Book Request page (Issue #79).
+- Architect updated architecture for the feature (Issue #78).
 
 ## What Is In Progress
-- [ ] Design Book Request Page (Issue #79)
-- [ ] Implement Book Request API and Telegram Integration (Issue #80)
+- [ ] Implement Book Request Page and API Integration (Issue #83)
 
 ## What Is Blocked
 - None.
 
 ## Next Cycle Plan
-- Designer to provide UI specs for the request form.
-- Backend to implement the Telegram integration.
-- Frontend to build the page once design is ready.
+- Frontend to build the Book Request page and connect it to the newly created API.
+- QA to review the implementation once the PR is raised.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
@@ -43,4 +42,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API.
 - [x] Layout consistency on About page — done
 - [x] Global Responsive Navbar — done
 - [x] Privacy Policy Page — done
-- [ ] Book Request Page (Telegram Integration) — in progress
+- [ ] Book Request Page (Telegram Integration) — in progress (Issue #83)
