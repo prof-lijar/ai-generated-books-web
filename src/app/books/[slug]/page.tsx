@@ -1,7 +1,5 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { fetchBooks } from "@/lib/github";
 import { notFound } from "next/navigation";
 
@@ -29,19 +27,11 @@ export default async function ReaderPage({ params }: PageProps) {
   }
 
   const pdfUrl = book.url;
+  const bookTitle = book.title;
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* Back Button - Positioned absolutely to overlay the viewer */}
-      <div className="absolute top-4 left-4 z-20">
-        <Link href="/">
-          <Button variant="outline" size="sm" className="shadow-md">
-            ← Back to Library
-          </Button>
-        </Link>
-      </div>
-
-      <PDFViewer url={pdfUrl} />
+    <div className="relative h-screen w-full overflow-hidden bg-bg-main">
+      <PDFViewer url={pdfUrl} title={bookTitle} />
     </div>
   );
 }
