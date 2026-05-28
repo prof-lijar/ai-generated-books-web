@@ -1,9 +1,10 @@
 {
-  "cycle_reasoning": "Fix critical PDF loading bug and implement missing viewer controls in Issue #14.",
+  "cycle_reasoning": "Focusing on fixing the critical PDF loading bug and completing the PDF viewer functionality as identified in Issue #14.",
   "current_phase": "quality",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, GitHub API",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
-    {"role": "backend", "turns": 3, "priority": "P0"},
-    {"role": "frontend", "turns": 3, "priority": "P0"}
+    {"role": "backend", "turns": 2, "priority": "P0"},
+    {"role": "frontend", "turns": 3, "priority": "P0"},
+    {"role": "qa", "turns": 2, "priority": "P1"}
   ]
 }

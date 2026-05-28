@@ -1,13 +1,13 @@
 # Project Progress
 
 ## Current Phase
-quality — Fixing critical bugs identified during E2E testing.
+quality — Fixing critical bugs identified during E2E testing to reach production-ready state.
 
 ## Tech Stack
 Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel.
 
 ## What Was Completed This Cycle
-- None (Planning cycle to address Issue #14).
+- None (Planning cycle to resolve Issue #14).
 
 ## What Is In Progress
 - Issue #14: [Bug] PDF Loading Mismatch and Stubbed Viewer Controls (P0)
@@ -16,8 +16,8 @@ Next.js (App Router), TypeScript, Tailwind CSS, GitHub API, Vercel.
 - None.
 
 ## Next Cycle Plan
-- Backend and Frontend to resolve the URL mismatch and implement the 'Fit to Width' functionality in the PDF viewer.
-- Once Issue #14 is fixed, perform a final QA check before declaring the project complete.
+- Backend and Frontend will collaborate to fix the PDF URL mismatch and implement the 'Fit to Width' functionality.
+- QA will verify the fixes to ensure the core reading experience is fully functional.
 
 ## Feature Checklist
 - [x] Library Page (fetch books from GitHub) — done
