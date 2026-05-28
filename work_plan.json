@@ -1,5 +1,5 @@
 {
-  "cycle_reasoning": "The project is feature-complete and in maintenance mode. No active development is required this cycle.",
+  "cycle_reasoning": "Project is feature-complete and in maintenance mode. No active tasks to assign.",
   "current_phase": "iteration",
   "tech_stack": "Next.js, TypeScript, Tailwind CSS",
   "assignments": []
