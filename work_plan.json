@@ -1,7 +1,7 @@
 {
-  "cycle_reasoning": "Performing routine health check to ensure platform stability in Cycle 17.",
+  "cycle_reasoning": "Perform routine stability and health check for Cycle 18 to ensure no regressions.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": [
     {"role": "qa", "turns": 2, "priority": "P2"}
   ]
