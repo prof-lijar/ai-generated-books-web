@@ -1,6 +1,8 @@
 {
-  "cycle_reasoning": "The platform is stable, and the Cycle 15 health check passed. No immediate work is required.",
+  "cycle_reasoning": "Performing routine health check to ensure platform stability in Cycle 17.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js, TypeScript, Tailwind CSS",
-  "assignments": []
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API",
+  "assignments": [
+    {"role": "qa", "turns": 2, "priority": "P2"}
+  ]
 }
