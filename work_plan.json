@@ -1,6 +1,6 @@
 {
-  "cycle_reasoning": "The project is in maintenance mode. All core features are implemented and stable. No active development is required this cycle.",
+  "cycle_reasoning": "Project is in maintenance mode. No new features requested and system is stable.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API",
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS",
   "assignments": []
 }
