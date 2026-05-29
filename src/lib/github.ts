@@ -17,7 +17,7 @@ export async function fetchBooks(): Promise<Book[]> {
   try {
     const response = await fetch(`${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents`, {
       headers,
-      next: { revalidate: 3600 },
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {
@@ -36,7 +36,7 @@ export async function fetchBooks(): Promise<Book[]> {
     for (const dir of dirs) {
       const dirResponse = await fetch(
         `${BASE_URL}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${dir.path}`,
-        { headers, next: { revalidate: 3600 } },
+        { headers, next: { revalidate: 300 } },
       );
 
       if (!dirResponse.ok) {
