@@ -1,6 +1,8 @@
 {
-  "cycle_reasoning": "Project is in maintenance mode. All core features are implemented and stable. No active development required this cycle.",
+  "cycle_reasoning": "Routine health check to ensure platform stability in maintenance phase.",
   "current_phase": "iteration",
-  "tech_stack": "Next.js, TypeScript, Tailwind CSS",
-  "assignments": []
+  "tech_stack": "Next.js (App Router), TypeScript, Tailwind CSS, Vitest, Telegram Bot API",
+  "assignments": [
+    {"role": "qa", "turns": 2, "priority": "P2"}
+  ]
 }
